@@ -1,18 +1,16 @@
-stroka=" +"
-mas=[]
-poleigri=[]
+stroka=" +"+8*"--+"
+mas=[]  #масив одной строки поля
+poleigri=[] #массив клеток поля
 for i in range(8):#генерация массива с клетками
     mas=[]
     for z in range(8):
        if (z+i)%2==1  and i<3:  #черные(вверхние) шашки
            mas.append("че")
-       elif(z+i)%2==1 and i>4:
+       elif(z+i)%2==1 and i>4:  #белые(нижние) шашки
            mas.append("бе")
-       else:
+       else:               #пустое место
            mas.append("  ")
     poleigri.append(mas)
-for i in range(8):
-    stroka=stroka+"--+"
 def pole():   #функция для генерации поля
     for i in range(8):
         print("  "+chr(ord("A")+i),end="") #нумерация сверху
