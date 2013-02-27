@@ -25,9 +25,9 @@ def Eatme(st):#Нужно кушать
     if ((ord(st[0])-ord(st[2]) +int(st[1])-int(st[3]))%2==0)and (ord(st[0])!=ord(st[2])and int(st[1])!=int(st[3]))  :#Ecли статок ноль ,то ход лежит на диагоналях
         d1=int(ord(st[2])+(ord(st[0])-ord(st[2]))/2)
         d2=int(int(st[3])+(int(st[1])-int(st[3]))/2)
-        if damka==0: #если простая шашка 
-           if poleigri[8-d2][d1-65]==rev:
-               eat=1
+        if damka==0: #если шашка
+           if poleigri[8-d2][d1-65]==rev and (int(st[1])==int(st[3])-2 or int(st[1])==int(st[3])+2)and(ord(st[0])==ord(st[2])+2 or ord(st[0])==ord(st[2])-2):
+            eat=1
 ##              poleigri[8-d2] [d1-65]="  "
 ##              poleigri[8-int(st[3])][ord(st[2])-65]=poleigri[8-int(st[1])][ord(st[0])-65]
 ##              poleigri[8-int(st[1])][ord(st[0])-65]="  ")
