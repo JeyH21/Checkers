@@ -57,9 +57,7 @@ def Eatme(st):#Нужно кушать
         elif poleigri[8-int(st[1])][ord(st[0])-65]==("ДБ" or "ДЧ"): #если дамка
             pass  
         else:  
-            pass
-    
-       
+            pass    
     return eat
 def pole():   #функция для генерации поля
     print("Осталось "+str(black)+" черных")
@@ -110,7 +108,7 @@ def xod(f,stold): #если f=1 то только есть
             #Проверяем возможность хода 
         if black==0 or white==0:
             break
-        if  (n%2==1 and poleigri[8-int(st[1])][ord(st[0])-65]==("бе"))or(n%2==0 and poleigri[8-int(st[1])][ord(st[0])-65]==("че")):#если ход своей фигурой
+        if  (n%2==1 and poleigri[8-int(st[1])][ord(st[0])-65]==("бе"))or(n%2==0 and poleigri[8-int(st[1])][ord(st[0])-65]==("че")):#если ход своей фигурой шашкой
             if  poleigri[8-int(st[3])][ord(st[2])-65]==("  "):#проверка на занятость клетки
                 if (int(st[1])==int(st[3])+c)and(ord(st[0])==ord(st[2])+1 or ord(st[0])==ord(st[2])-1)and f==0:#если ход по диагонали
                     poleigri[8-int(st[3])][ord(st[2])-65]=poleigri[8-int(st[1])][ord(st[0])-65]
@@ -133,8 +131,19 @@ def xod(f,stold): #если f=1 то только есть
                 print("Данная клетка занята")
         else:
              print("Играйте своими фигурами")
-            
-
+             if  (n%2==1 and poleigri[8-int(st[1])][ord(st[0])-65]==("ДБ"))or(n%2==0 and poleigri[8-int(st[1])][ord(st[0])-65]==("ДЧ")):#если ход своей фигурой ДАМКОЙ
+            if  poleigri[8-int(st[3])][ord(st[2])-65]==("  "):#проверка на занятость клетки
+                if #если ход по диагонали
+                    poleigri[8-int(st[3])][ord(st[2])-65]=poleigri[8-int(st[1])][ord(st[0])-65]
+                    poleigri[8-int(st[1])][ord(st[0])-65]="  "
+                elif Eatme(st)==1: #КУШАТЬ
+                    break
+                else:
+                   print("Данный ход невозможен")  
+            else:
+                print("Данная клетка занята")
+        else:
+             print("Играйте своими фигурами")
 while 1:
     if black==0:
         print("Белые выиграли")
